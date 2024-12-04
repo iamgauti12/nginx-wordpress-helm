@@ -1,0 +1,9 @@
+namespace: nginx
+service:
+  type: LoadBalancer
+  port: 8080
+replica: 1
+image:
+  repository: gauti12/nginx
+  tag: v2
+  

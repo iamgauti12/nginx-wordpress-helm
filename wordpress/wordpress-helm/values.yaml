@@ -11,4 +11,4 @@ image:
 replicas: 1
 service:
   port: 80
-  type: LoadBalancer
+  type: ClusterIP

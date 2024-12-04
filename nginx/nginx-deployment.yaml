@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: nginx
+  labels:
+    id: c0904322       # replace with your actual college ID
+    app: nginx
+    env: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      id: c0904322
+  template:
+    metadata:
+      labels:
+        id: c0904322   # replace with your actual college ID
+        app: nginx
+        env: dev
+    spec:
+      containers:
+        - name: nginx
+          image: gauti12/nginx:v2  # replace with your Docker image name
+          ports:
+            - containerPort: 8080

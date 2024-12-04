@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: {{ .Values.namespace }}
+  labels:
+    id: c0904322       
+    app: nginx
+    env: dev
+spec:
+  replicas: {{ .Values.replica }}
+  selector:
+    matchLabels:
+      id: c0904322
+  template:
+    metadata:
+      labels:
+        id: c0904322   
+        app: nginx
+        env: dev
+    spec:
+      containers:
+        - name: nginx
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }} 
+          ports:
+            - containerPort: {{ .Values.service.port }}
