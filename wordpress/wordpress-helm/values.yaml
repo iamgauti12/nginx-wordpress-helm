@@ -8,7 +8,7 @@ config:
 image:
   repository: wordpress
   tag: latest
-replicas: 1
+replicas: 3
 service:
   port: 80
   type: ClusterIP
